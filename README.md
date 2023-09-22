@@ -17,8 +17,16 @@ Para este ejemplo se utilizará el gestor de bases de datos [SQLite3](https://ww
 |2|nombre|varchar(100)|NOT NULL|Nombre del usuario|
 |3|primer_apellido|varchar(50)|NOT NULL|Primer apellido del usuario|
 |4|segundo_apellido|varchar(50)|NOT NULL|Segundo apellido del usuario|
-|5|email|varchar(50)|NOT NULL|Correo electrónico del usuario|
-|6|telefono|varchar(13)|NOT NULL|Numero de telefono del usuario|
+|5|email|varchar(50)|NOT NULL|Correo electrónico|
+|6|telefono|varchar(13)|NOT NULL|Numero de telefono|
 
 ### 3.2 Script
 
+CREATE TABLE IF NOT EXISTS contactos (
+    id_contactos INT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    primer_apellido VARCHAR(50) NOT NULL,
+    segundo_apellido VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    telefono VARCHAR(13) NOT NULL
+);
