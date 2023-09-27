@@ -31,3 +31,26 @@ CREATE TABLE IF NOT EXISTS contactos (
     email VARCHAR(50) NOT NULL,
     telefono VARCHAR(13) NOT NULL
 );
+```
+
+## 4. Diseño de la API
+
+### 4.1 ENDPOINT de Obtención de Contactos (GET)
+
+|No.|Propiedad|Detalle|
+|--|--|--|
+|1|Description||
+|2|Summary||
+|3|Method||
+|4|EndPoint||
+|5|Query Param||
+|6|Path Param||
+|7|Data||
+|8|Version||
+|9|Status Code (ÉXITO)||
+|10|Response Type (ÉXITO)||
+|11|Response (ÉXITO)||
+|12|CURL||
+|13|Status Code (ERROR)||
+|14|Response Type (ERROR)||
+|15|Response (ERROR)||
