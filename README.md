@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS contactos (
 |2|Summary|Endpoint para obtener la lista de contactos|
 |3|Method|GET|
 |4|EndPoint|http://localhost:8000/contactos|
-|5|Query Param|?nombre=Juan|
+|5|Query Param|?nombre=Jesús|
 |6|Path Param|NA|
 |7|Data|NA|
 |8|Version|v1|
@@ -89,8 +89,8 @@ CREATE TABLE IF NOT EXISTS contactos (
 |8|Version|v1|
 |9|Status Code (ÉXITO)|201|
 |10|Response Type (ÉXITO)|application/json|
-|11|Response (ÉXITO)|```{"message" : "Contacto creado con éxito", "datetime" : "21/09/23 10:36"}```|
-|12|CURL|```curl -X POST 'http://localhost:8000/contactos' -H 'accept: application/json' -H 'Content-Type: application/json' -d '{"nombre": "Juan", "email": "juan@example.com"}'```|
+|11|Response (ÉXITO)|```{"message" : "Contacto creado exitosamente", "datetime" : "21/09/23 10:36"}```|
+|12|CURL|```curl -X POST 'http://localhost:8000/contactos' -H 'accept: application/json' -H 'Content-Type: application/json' -d '{"nombre": "Jesús", "email": "jesusraulrg@icloud.com"}'```|
 |13|Status Code (ERROR)|400|
 |14|Response Type (ERROR)|application/json|
 |15|Response (ERROR)|Mensajes de error específicos en formato JSON|
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS contactos (
 |9|Status Code (ÉXITO)|204|
 |10|Response Type (ÉXITO)|NA|
 |11|Response (ÉXITO)||
-|12|CURL|```curl -X DELETE 'http://localhost:8000/contactos/123' -H 'accept: application/json'```|
+|12|CURL|```curl -X DELETE 'http://localhost:8000/contactos/1' -H 'accept: application/json'```|
 |13|Status Code (ERROR)|400|
 |14|Response Type (ERROR)|application/json|
 |15|Response (ERROR)|Mensajes de error específicos en formato JSON|
@@ -129,8 +129,8 @@ CREATE TABLE IF NOT EXISTS contactos (
 |8|Version|v1|
 |9|Status Code (ÉXITO)|200|
 |10|Response Type (ÉXITO)|application/json|
-|11|Response (ÉXITO)|```{"message" : "Contacto actualizado con éxito", "datetime" : "21/09/23 10:36"}```|
-|12|CURL|```curl -X PUT 'http://localhost:8000/contactos/123' -H 'accept: application/json' -H 'Content-Type: application/json' -d '{"nombre": "Nuevo Nombre", "email": "nuevo@example.com"}'```|
+|11|Response (ÉXITO)|```{"message" : "Contacto actualizado exitosamente", "datetime" : "21/09/23 10:36"}```|
+|12|CURL|```curl -X PUT 'http://localhost:8000/contactos/123' -H 'accept: application/json' -H 'Content-Type: application/json' -d '{"nombre": "Jesús", "email": "jesusraulrg@icloud.com"}'```|
 |13|Status Code (ERROR)|400|
 |14|Response Type (ERROR)|application/json|
 |15|Response (ERROR)|Mensajes de error específicos en formato JSON|
