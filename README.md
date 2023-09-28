@@ -95,3 +95,43 @@ CREATE TABLE IF NOT EXISTS contactos (
 |14|Response Type (ERROR)||
 |15|Response (ERROR)||
 
+### 4.4 ENDPOINT de Creación de Contactos (POST)
+
+|No.|Propiedad|Detalle|
+|--|--|--|
+|1|Description||
+|2|Summary||
+|3|Method||
+|4|EndPoint||
+|5|Query Param||
+|6|Path Param||
+|7|Data||
+|8|Version||
+|9|Status Code (ÉXITO)||
+|10|Response Type (ÉXITO)||
+|11|Response (ÉXITO)||
+|12|CURL||
+|13|Status Code (ERROR)||
+|14|Response Type (ERROR)||
+|15|Response (ERROR)||
+
+### 4.5 ENDPOINT de Creación de Contactos (POST)
+
+|No.|Propiedad|Detalle|
+|--|--|--|
+|1|Description||
+|2|Summary||
+|3|Method||
+|4|EndPoint||
+|5|Query Param||
+|6|Path Param||
+|7|Data||
+|8|Version||
+|9|Status Code (ÉXITO)||
+|10|Response Type (ÉXITO)||
+|11|Response (ÉXITO)||
+|12|CURL||
+|13|Status Code (ERROR)||
+|14|Response Type (ERROR)||
+|15|Response (ERROR)||
+
