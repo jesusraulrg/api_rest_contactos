@@ -59,21 +59,28 @@ CREATE TABLE IF NOT EXISTS contactos (
 
 |No.|Propiedad|Detalle|
 |--|--|--|
-|1|Description||
-|2|Summary||
-|3|Method||
-|4|EndPoint||
-|5|Query Param||
-|6|Path Param||
-|7|Data||
-|8|Version||
-|9|Status Code (ÉXITO)||
-|10|Response Type (ÉXITO)||
-|11|Response (ÉXITO)||
-|12|CURL||
-|13|Status Code (ERROR)||
-|14|Response Type (ERROR)||
-|15|Response (ERROR)||
+|1|Description|Obtener una lista de contactos desde la API|
+|2|Summary|Endpoint para obtener la lista de contactos|
+|3|Method|GET|
+|4|EndPoint|http://localhost:8000/contactos|
+|5|Query Param|?nombre=Juan|
+|6|Path Param|NA|
+|7|Data|NA|
+|8|Version|v1|
+|9|Status Code (ÉXITO)|200|
+|10|Response Type (ÉXITO)|application/json|
+|11|Response (ÉXITO)|
+[
+    {"nombre": "Juan", "email": "juan@example.com"},
+    {"nombre": "María", "email": "maria@example.com"},
+    {"nombre": "Carlos", "email": "carlos@example.com"}
+    // ... otros contactos
+]
+|
+|12|CURL|curl -X GET 'http://localhost:8000/contactos' -H 'accept: application/json'|
+|13|Status Code (ERROR)|400|
+|14|Response Type (ERROR)|application/json|
+|15|Response (ERROR)|Mensajes de error específicos en formato JSON|
 
 ### 4.3 ENDPOINT de Creación de Contactos (POST)
 
