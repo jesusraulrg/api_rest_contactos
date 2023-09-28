@@ -70,12 +70,14 @@ CREATE TABLE IF NOT EXISTS contactos (
 |9|Status Code (ÉXITO)|200|
 |10|Response Type (ÉXITO)|application/json|
 |11|Response (ÉXITO)|
+```JSON
 [
     {"nombre": "Juan", "email": "juan@example.com"},
     {"nombre": "María", "email": "maria@example.com"},
     {"nombre": "Carlos", "email": "carlos@example.com"}
     // ... otros contactos
 ]
+```
 |
 |12|CURL|curl -X GET 'http://localhost:8000/contactos' -H 'accept: application/json'|
 |13|Status Code (ERROR)|400|
