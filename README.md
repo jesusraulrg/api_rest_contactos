@@ -39,21 +39,21 @@ CREATE TABLE IF NOT EXISTS contactos (
 
 |No.|Propiedad|Detalle|
 |--|--|--|
-|1|Description||
-|2|Summary||
-|3|Method||
-|4|EndPoint||
-|5|Query Param||
-|6|Path Param||
-|7|Data||
-|8|Version||
-|9|Status Code (ÉXITO)||
-|10|Response Type (ÉXITO)||
-|11|Response (ÉXITO)||
-|12|CURL||
-|13|Status Code (ERROR)||
-|14|Response Type (ERROR)||
-|15|Response (ERROR)||
+|1|Description|Endpont raiz de la API|
+|2|Summary|Endpoint raiz|
+|3|Method|GET|
+|4|EndPoint|http://localhost:8000/|
+|5|Query Param|NA|
+|6|Path Param|NA|
+|7|Data|NA|
+|8|Version|v1|
+|9|Status Code (ÉXITO)|200-OK|
+|10|Response Type (ÉXITO)|application/json|
+|11|Response (ÉXITO)|```{“version” : “v1”, “message” : “Endpoint-raiz”, “datetime” : “21/09/23 10:36”} ```|
+|12|CURL|```curl -x ‘GET’ ‘http://localhost:8000/' -H ‘accept:application/json’```|
+|13|Status Code (ERROR)|NA|
+|14|Response Type (ERROR)|NA|
+|15|Response (ERROR)|NA|
 
 ### 4.2 ENDPOINT de Obtención de Contactos (GET)
 
