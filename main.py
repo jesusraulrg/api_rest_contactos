@@ -25,7 +25,6 @@ async def get_contactos():
                 contacto = {
                     "nombre": row["nombre"],
                     "email": row["email"],
-                    "telefono": row["telefono"]
                 }
                 # Agregar el contacto a la lista
                 contactos.append(contacto)
