@@ -1,39 +1,79 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException, status
 import csv
-import json
 
 app = FastAPI()
+    
+# Lista para almacenar los contactos en memoria
+contactos = []
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+
+
+# Ruta al archivo CSV
+archivo_csv = "contactos.csv"
+
+ 
+#Función para cargar los contactos desde el archivo CSV al iniciar la aplicación
+def cargar_contactos():
+    try:
+        with open(archivo_csv, mode="r", newline="", encoding="utf-8") as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                contactos.append({"nombre": row["nombre"], "email": row["email"]})
+    except FileNotFoundError:
+        pass  
+        """ 
+            Si el archivo no existe, 
+            simplemente continua
+            con una lista vacía
+        """
+cargar_contactos()
+# Cargamos los contactos desde el archivo CSV al iniciar la aplicación
+
+@app.get("/", status_code=status.HTTP_200_OK, summary="EndPoint raíz")
+async def EndPoitn_raíz():
+
+    """
+    # EndPoitn raíz
+    ## Status codes
+    * 289 - Código de muestra
+    * 304 - Otor status de prueba
+    """
+    return {"message": "Hello Niños"}
 
 @app.get("/v1/contactos")
-async def get_contactos():
-    # Definimos una lista para almacenar los datos de contactos en formato JSON
-    contactos = []
+async def listar_contactos():
 
+    # Listar todos los contactos en formato JSON correspondiente
+    return {"contactos": contactos}
+
+@app.post("/v1/contactos", status_code=status.HTTP_201_CREATED)
+async def crear_contacto(nombre: str, email: str):
+
+    # Crear un nuevo contacto manualmente y guardarlo en el archivo CSV.
+    nuevo_contacto = {"nombre": nombre, "email": email}
+    contactos.append(nuevo_contacto)
+
+    # Aquí guardar el nuevo contacto en contactos.csv 
+    guardar_contacto(nuevo_contacto)
+    return {"message": "Contacto creado exitosamente"}
+
+def guardar_contacto(contacto):
+
+    # Guardar un contacto en el archivo CSV.
     try:
-        # Abrir el archivo CSV en modo lectura
-        with open('contactos.csv', mode='r', encoding='utf-8') as csv_file:
-            # Utilizar el lector CSV para leer el archivo
-            csv_reader = csv.DictReader(csv_file)
+        # Abre el archivo CSV en modo escritura (a+ para crear si no existe).
+        with open(archivo_csv, mode="a+", newline="", encoding="utf-8") as csvfile:
+            fieldnames = ["nombre", "email"]
+
+            # Los nombres de las columnas del CSV
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+            # Si el archivo se encuentra vacío se puede escribir los nombres de las columnas
+            if csvfile.tell() == 0:
+                writer.writeheader()
+
+            # Aquí se escribe el nuevo contacto en el CSV
+            writer.writerow(contacto)
             
-            # Iterar a través de las filas del archivo CSV
-            for row in csv_reader:
-                # Convertir cada fila en un diccionario
-                contacto = {
-                    "nombre": row["nombre"],
-                    "email": row["email"],
-                }
-                # Agregar el contacto a la lista
-                contactos.append(contacto)
-
-    except FileNotFoundError:
-        return {"error": "El archivo contactos.csv no se encontró"}
-
-    # Convertir la lista de contactos a formato JSON
-    contactos_json = json.dumps(contactos)
-
-    # Retornar los contactos en formato JSON en la respuesta
-    return contactos_json
+    except Exception as e:
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Error al crear el contacto en el archivo CSV")
