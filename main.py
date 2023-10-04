@@ -38,7 +38,7 @@ async def EndPoitn_raíz():
     * 289 - Código de muestra
     * 304 - Otor status de prueba
     """
-    return {"message": "Hello Niños"}
+    return {"message": "Hello world"}
 
 @app.get("/v1/contactos")
 async def listar_contactos():
@@ -74,6 +74,6 @@ def guardar_contacto(contacto):
 
             # Aquí se escribe el nuevo contacto en el CSV
             writer.writerow(contacto)
-            
+
     except Exception as e:
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Error al crear el contacto en el archivo CSV")
